@@ -13,9 +13,10 @@ header {
 }
 
 main {
-    margin: 15px;
+    margin: 3in; /* Margin set to 3 inches */
     padding: 15px;
     background-color: white;
+    text-align: center; /* Center text within the main content */
 }
 
 footer {
@@ -28,20 +29,21 @@ footer {
 }
 
 header h1, .table-of-contents h2, section h2 {
-    margin-left: 1in; /* Indent headers from the left */
+    margin-left: 3in; /* Indent headers from the left */
     border-bottom: 1px solid gray; /* Gray line beneath headers */
     padding-bottom: 10px;
-    width: calc(100% - 2in); /* Width minus 1 inch from each edge */
+    width: calc(100% - 6in); /* Width minus 3 inches from each edge */
 }
 
 .section-content {
-    margin: 0 1in; /* Set margin to 1 inch from each edge */
+    margin: 0 3in; /* Set margin to 3 inches from each edge */
     padding: 10px 0;
+    text-align: center; /* Center text within each section */
 }
 
 .table-of-contents {
     text-align: center;
-    margin: 20px;
+    margin: 20px 3in; /* Margin set to 3 inches */
 }
 
 .table-of-contents table {
@@ -62,4 +64,3 @@ header h1, .table-of-contents h2, section h2 {
 .table-of-contents a:hover {
     text-decoration: underline;
 }
-
