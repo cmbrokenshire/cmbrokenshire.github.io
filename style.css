@@ -28,7 +28,7 @@ footer {
 }
 
 .table-of-contents {
-    text-align: center; /* Center the Table of Contents */
+    text-align: center;
     margin: 20px;
 }
 
@@ -54,3 +54,4 @@ footer {
 .table-of-contents a:hover {
     text-decoration: underline;
 }
+
