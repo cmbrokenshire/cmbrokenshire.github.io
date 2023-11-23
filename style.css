@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
 header {
@@ -27,13 +27,21 @@ footer {
     width: 100%;
 }
 
+header h1, .table-of-contents h2, section h2 {
+    margin-left: 1in; /* Indent headers from the left */
+    border-bottom: 1px solid gray; /* Gray line beneath headers */
+    padding-bottom: 10px;
+    width: calc(100% - 2in); /* Width minus 1 inch from each edge */
+}
+
+.section-content {
+    margin: 0 1in; /* Set margin to 1 inch from each edge */
+    padding: 10px 0;
+}
+
 .table-of-contents {
     text-align: center;
     margin: 20px;
-}
-
-.table-of-contents h2 {
-    margin-bottom: 10px;
 }
 
 .table-of-contents table {
