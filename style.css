@@ -26,3 +26,34 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.table-of-contents {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.table-of-contents h2 {
+    text-align: left;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.table-of-contents ul li {
+    margin-bottom: 10px;
+}
+
+.table-of-contents a {
+    text-decoration: none;
+    color: #0275d8;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+}
+
