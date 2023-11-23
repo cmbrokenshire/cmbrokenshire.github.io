@@ -28,24 +28,22 @@ footer {
 }
 
 .table-of-contents {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
+    text-align: center; /* Center the Table of Contents */
     margin: 20px;
-    border-radius: 8px;
 }
 
 .table-of-contents h2 {
-    text-align: left;
-}
-
-.table-of-contents ul {
-    list-style: none;
-    padding: 0;
-}
-
-.table-of-contents ul li {
     margin-bottom: 10px;
+}
+
+.table-of-contents table {
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse; /* Removes cell spacing */
+}
+
+.table-of-contents td {
+    padding: 5px; /* Spacing inside each cell */
+    border-bottom: 1px solid #ddd; /* Horizontal line under each item */
 }
 
 .table-of-contents a {
@@ -56,4 +54,3 @@ footer {
 .table-of-contents a:hover {
     text-decoration: underline;
 }
-
