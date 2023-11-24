@@ -1,23 +1,46 @@
+/* Main body styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: left; /* Align text to the left */
-}
-
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: white;
+    margin: 0 auto; /* Center the content */
+    width: calc(100% - 4in); /* Adjust width to prevent full-width text lines */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Header styles */
 header {
-    background-color: #333;
-    color: white;
     padding: 10px 0;
-    text-align: center; /* Center text in the header */
+    text-align: left; /* Align header text to the left */
+    padding-left: 0;
+  }
+  
+  /* Header (h1, h2, etc.) styles */
+h1, h2, h3, h4, h5, h6 {
+    margin-left: 2in; /* Indent headers */
+    border-bottom: 1px solid #cccccc; /* Line under headers */
+    text-align: left; /* Align header text to the left */
+    /* Other existing styles... */
 }
-
+  
+  /* Main page header specific style */
+header h1 {
+    font-size: 28px; /* Example size, adjust as needed */
+    /* Other styles as per your main header requirements */
+    text-align: left; /* Align header text to the left */
+}
 main, section {
-    margin: 0 3in; /* Margin set to 3 inches from each side */
+    margin: 0 2in; /* Margin set to 3 inches from each side */
     padding: 15px;
     background-color: white;
-    text-align: center; /* Center text within the main content */
+    text-align: left; /* Center text within the main content */
+}
+section h2 {
+    text-align: left; /* Align section titles to the left */
+    margin-left: 2in; /* Ensure consistent indentation */
+    /* Other styles as needed */
 }
 
 footer {
@@ -27,18 +50,18 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center; /* Center text in the footer */
+    text-align: left; /* Center text in the footer */
 }
 
 header h1, .table-of-contents h2, section h2 {
-    margin-left: 3in; /* Indent headers from the left */
+    margin-left: 2in; /* Indent headers from the left */
     border-bottom: 1px solid gray; /* Gray line beneath headers */
     padding-bottom: 10px;
-    width: calc(100% - 6in); /* Width minus 3 inches from each edge */
+    width: calc(100% - 4in); /* Width minus 3 inches from each edge */
 }
 
 .section-content, .table-of-contents {
-    margin: 0 3in; /* Set margin to 3 inches from each edge */
+    margin: 0 2in; /* Set margin to 3 inches from each edge */
     padding: 10px 0;
     text-align: left; /* Align text to the left within each section */
 }
