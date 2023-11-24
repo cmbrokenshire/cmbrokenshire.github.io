@@ -55,7 +55,7 @@ header h1, .table-of-contents h2, section h2 {
 }
 
 .section-content, .table-of-contents {
-    margin: 0 1.5in; /* Set margin to 3 inches from each edge */
+    margin-left: 0.25in; /* Set margin to 3 inches from each edge */
     padding: 10px 0;
     text-align: left; /* Align text to the left within each section */
 }
