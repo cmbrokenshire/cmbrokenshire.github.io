@@ -5,69 +5,63 @@ body {
     line-height: 1.6;
     background-color: white;
     margin: 0 auto; /* Center the content */
-    width: calc(100% - 4in); /* Adjust width to prevent full-width text lines */
+    width: calc(100% - 3in); /* Adjust width */
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-  
-  /* Header styles */
+    text-align: left; /* Align text to the left */
+}
+
+/* Header styles */
 header {
     padding: 10px 0;
     text-align: left; /* Align header text to the left */
-    padding-left: 0;
-  }
-  
-  /* Header (h1, h2, etc.) styles */
-h1, h2, h3, h4, h5, h6 {
-    margin-left: 2in; /* Indent headers */
-    border-bottom: 1px solid #cccccc; /* Line under headers */
-    text-align: left; /* Align header text to the left */
-    /* Other existing styles... */
-}
-  
-  /* Main page header specific style */
-header h1 {
-    font-size: 28px; /* Example size, adjust as needed */
-    /* Other styles as per your main header requirements */
-    text-align: left; /* Align header text to the left */
-}
-main, section {
-    margin: 0 2in; /* Margin set to 3 inches from each side */
-    padding: 15px;
-    background-color: white;
-    text-align: left; /* Center text within the main content */
-}
-section h2 {
-    text-align: left; /* Align section titles to the left */
-    margin-left: 2in; /* Ensure consistent indentation */
-    /* Other styles as needed */
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: left; /* Center text in the footer */
+/* Main page header specific style */
+header h1 {
+    font-size: 28px; /* Example size, adjust as needed */
+    text-align: left; /* Align header text to the left */
+    padding-left: 0; /* No additional padding on the left */
+    margin-left: 0; /* Align with the body content */
+    border-bottom: 1px solid #cccccc; /* Line under header */
+}
+
+/* Adjustments for main content and sections */
+main, section {
+    margin: 0 ; /* No additional margin */
+    padding: 15px;
+    background-color: white;
+    text-align: left; /* Align text to the left */
+}
+
+/* Specific styles for section headers */
+section h2, section h3, section h4, section h5, section h6 {
+    text-align: left; /* Align section titles to the left */
+    margin-left: 0 ; /* Align with the main header */
+    border-bottom: 1px solid #cccccc; /* Line under headers */
+}
+/* Styles for section content */
+section p, section ul, section ol, section dl {
+    margin-left: 1.5in; /* Align content with section headers */
+    padding-left: 0; /* No additional padding */
+    width: calc(100% - 3in); /* Width to fit content, within the margins */
 }
 
 header h1, .table-of-contents h2, section h2 {
-    margin-left: 2in; /* Indent headers from the left */
+    margin-left: 1.5in; /* Indent headers from the left */
     border-bottom: 1px solid gray; /* Gray line beneath headers */
     padding-bottom: 10px;
-    width: calc(100% - 4in); /* Width minus 3 inches from each edge */
+    width: calc(100% - 3in); /* Width minus 3 inches from each edge */
 }
 
 .section-content, .table-of-contents {
-    margin: 0 2in; /* Set margin to 3 inches from each edge */
+    margin: 0 1.5in; /* Set margin to 3 inches from each edge */
     padding: 10px 0;
     text-align: left; /* Align text to the left within each section */
 }
 
 .table-of-contents table {
-    margin: 0 auto; /* Center the table */
+    margin-left: 1.5in; /* Center the table */
     border-collapse: collapse; /* Removes cell spacing */
 }
 
@@ -83,4 +77,11 @@ header h1, .table-of-contents h2, section h2 {
 
 .table-of-contents a:hover {
     text-decoration: underline;
+}
+
+.custom-image {
+    width: calc(100% - 3.5in); /* Full width minus 3 inches */
+    height: auto; /* To maintain aspect ratio */
+    display: block; /* To enable margin auto */
+    margin: 0 auto; /* Center the image with equal margins on both sides */
 }
