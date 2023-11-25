@@ -113,3 +113,10 @@ code {
     color: #333; /* Darker text color for better contrast */
 }
 
+.download-link {
+    margin-left: 1.5in; /* Set left margin to 1.5 inches */
+    display: block; /* Optional: Makes the link a block element */
+    /* Add any additional styling you need */
+}
+
+
