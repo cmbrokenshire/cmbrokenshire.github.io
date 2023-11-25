@@ -22,7 +22,7 @@
                 <td><a href="#1.1 code">1.2 Code</a></td>
             </tr>
             <tr>
-                <td><a href="#1.3 references">1.3 References</a></td>
+                <td><a href="#1.3 images">1.3 Images</a></td>
             </tr>
             <tr>
                 <td><a href="2 Dataset Generator: Tetris Classifier">2 Dataset Generator: Tetris Classifier</a></td>
@@ -34,7 +34,19 @@
                 <td><a href="#2.2 code">2.2 Code</a></td>
             </tr>
             <tr>
-                <td><a href="#2.3 references">2.3 References</a></td>
+                <td><a href="#2.3 images">2.3 Images</a></td>
+            </tr>
+            <tr>
+                <td><a href="3. Model 1: Combining Graph Theory and KNN Regression">3. Model 1: Combining Graph Theory and KNN Regression</a></td>
+            </tr>
+            <tr>
+                <td><a href="#3.1 description">3.1 Description</a></td>
+            </tr>
+            <tr>
+                <td><a href="#3.2 code">3.2 Code</a></td>
+            </tr>
+            <tr>
+                <td><a href="#3.3 results">3.3 Results</a></td>
             </tr>
         </table>
     </div>
@@ -99,9 +111,10 @@
             <p>Brief overview of the coding aspects of the project or links to code repositories...</p>
         </section>
     
-        <section class="subsection" id="1.3 references">
-            <h3>1.3 References</h3>
-            <p>List of references, resources, and acknowledgments used in the project...</p>
+        <section class="subsection" id="1.3 images">
+            <h3>1.3 Images</h3>
+            <img src="dot_dataset_example_1.png" class="custom-image">
+            <img src="dot_dataset_example_2.png" class="custom-image">
         </section>
     </section>
     <section id="2. Dataset Generator: Tetris Classifier">
@@ -178,8 +191,32 @@
             <p>Brief overview of the coding aspects of the project or links to code repositories...</p>
         </section>
     
-        <section class="subsection" id="2.3 references">
-            <h3>2.3 References</h3>
+        <section class="subsection" id="2.3 images">
+            <h3>2.3 Images</h3>
+            <img src="Tetris_dataset_exp.png" class="custom-image">
+        </section>
+    </section>
+    <section id="3. Model 1: Combining Graph Theory and KNN Regression">
+        <h2>3. Model 1: Combining Graph Theory and KNN Regression</h2>
+    
+        <section class="subsection" id="3.1 description">
+            <h3>3.1 Description</h3>
+            <p>The following code is the code I used to generate randomly, color, located, oriented tetris shapes. The following dataset represents the next step for a model built to abstract structures. Unlike the dot example, the following dataset requires that model to understand also the structure of the object, invariant to the structure's orientation. Additionally, the task also increases in difficulty now that the classifier must be non-binary. A model that is able to classify the following dataset appropriately may be robust enough for other complex structures like shapes,or  maybe even numbers. </p>
+        </section>
+    
+        <section class="subsection" id="3.2 code">
+            <h3>3.2 Code</h3>
+            <pre><code>
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from random import randint, choice
+        
+            </code></pre>
+            <p>Brief overview of the coding aspects of the project or links to code repositories...</p>
+        </section>
+    
+        <section class="subsection" id="3.3 results">
+            <h3>3.3 Results</h3>
             <p>List of references, resources, and acknowledgments used in the project...</p>
         </section>
     </section>
