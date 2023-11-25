@@ -201,18 +201,103 @@
     
         <section class="subsection" id="3.1 description">
             <h3>3.1 Description</h3>
-            <p>The following code is the code I used to generate randomly, color, located, oriented tetris shapes. The following dataset represents the next step for a model built to abstract structures. Unlike the dot example, the following dataset requires that model to understand also the structure of the object, invariant to the structure's orientation. Additionally, the task also increases in difficulty now that the classifier must be non-binary. A model that is able to classify the following dataset appropriately may be robust enough for other complex structures like shapes,or  maybe even numbers. </p>
+            <p>The challenge of accurately classifying images of dots and Tetris shapes primarily revolves around how these images are represented, rather than the intricacies of the classification model itself. The objective is to develop an image representation that is invariant to specific factors such as the location, size, and color of the shapes. To achieve this, we adopt an innovative approach by using a weighted complete graph to describe each image. In this graph, each pixel is a node, and the edges between these nodes are weighted based on the similarity between two pixels, determined by their color difference and spatial distance. This methodology is particularly effective in identifying dots, as they tend to form nodes that are distant from other nodes in the graph.</p>
+            <p>The process begins with the image_to_graph function, which iterates through every pixel in the image. For each pixel, a vector is created, with each entry representing the weight of the pixel's edge to other pixels. The weight is set to zero if the pixels differ in color, and if they are the same color, it is inversely proportional to their distance. The vectors are then sorted in decreasing order based on these weights, keeping only the top K weights for each pixel, thereby focusing on each pixel's K closest neighbors.</p>
+            <p>Following this, the create_graph_from_image function takes over. It organizes the vectors of nodes based on their magnitude in increasing order, highlighting the node that is least related to any others. The matrix of vectors is then flattened into a single large vector, corresponding to each image. This large vector encapsulates the relational dynamics of the nodes that stand out in the graph.</p>
+            <p>Finally, this graph-based representation of images is utilized to train a K-Nearest Neighbors (KNN) regression model. The model predicts whether an image contains a dot or a Tetris shape by analyzing the isolation of certain nodes (pixels) from others within the graph. This approach shifts the focus from the absolute characteristics of pixels to their relational structure within the image, enabling an effective classification of dots and Tetris shapes.</p>
         </section>
     
         <section class="subsection" id="3.2 code">
             <h3>3.2 Code</h3>
             <pre><code>
-        import numpy as np
-        import matplotlib.pyplot as plt
-        from random import randint, choice
+                import numpy as np
+                from sklearn.model_selection import train_test_split
+                from sklearn.neighbors import KNeighborsClassifier
+                from sklearn.metrics import accuracy_score
+
+                def calculate_edge_weight(pixel1, pixel2, coord1, coord2, color_similarity_threshold=15):
+                    # Calculate spatial distance and normalize it
+                
+                    spatial_dist = np.linalg.norm(np.array(coord1) - np.array(coord2))
+                
+                    # Calculate color distance
+                    color_dist = np.linalg.norm(np.array(pixel1) - np.array(pixel2))
+                
+                    # Check if the color distance is within the similarity threshold
+                    if color_dist < color_similarity_threshold:
+                        # If colors are similar, return the normalized spatial distance
+                        return 1/spatial_dist
+                    else:
+                        # If colors are not similar, return 0
+                        return 0.0
+                
+                
+                def image_to_graph(image):
+                    num_pixels = image.shape[0] * image.shape[1]
+                    node_vectors = np.zeros((num_pixels, num_pixels))
+                
+                    for x1 in range(image.shape[0]):
+                        for y1 in range(image.shape[1]):
+                            idx1 = x1 * image.shape[1] + y1
+                            for x2 in range(image.shape[0]):
+                                for y2 in range(image.shape[1]):
+                                    idx2 = x2 * image.shape[1] + y2
+                                    if idx1 != idx2:  # Avoid self-edges
+                                        weight = calculate_edge_weight(image[x1, y1], image[x2, y2], (x1, y1), (x2, y2))
+                                        node_vectors[idx1, idx2] = weight
+                
+                    
+                    
+                    sorted_node_vectors = np.sort(node_vectors, axis=1)[:, ::-1][:, :25]  # Tune the 25, it represents K, or the amount of entries of each vector we want to keep
+                    return sorted_node_vectors
+            
+                def create_graphs_from_images(images, labels):
+                    graph_vectors = []
+                    for i, image in enumerate(images):
+                        sorted_vectors = image_to_graph(image)
+                        # Sort nodes by the magnitude of their vectors in increasing order
+                        magnitudes = np.linalg.norm(sorted_vectors, axis=1)
+                        sorted_indices = np.argsort(magnitudes)  # Sort in ascending order
+                        sorted_vectors = sorted_vectors[sorted_indices]
+                        # Flatten to a single vector and append the label
+                        flattened_vector = sorted_vectors.flatten()
+                        labeled_vector = np.append(flattened_vector, labels[i])
+                        # Get the first entries of the vector
+                        first_entries = labeled_vector[:1000] #1000 represents how many entries of the large vector we want to have
+                        graph_vectors.append(first_entries)
+                    return graph_vectors
+                
+                # Use the generated dataset
+                labeled_graphs = create_graphs_from_images(dataset_images, dataset_labels)
+        
+                
+                # 'labeled_graphs' contains the flattened, sorted, labeled graph representation of each image
+                
+                
+                # Separate the features and labels
+                features = np.array([graph[:-1] for graph in labeled_graphs])
+                print(features)
+                labels = np.array([graph[-1] for graph in labeled_graphs])
+                
+                # Splitting the dataset into training and testing sets
+                X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
+                
+                # Create a KNN classifier instance
+                # 'n_neighbors' is the K value. You might need to experiment with this number to find the optimal value.
+                knn = KNeighborsClassifier(n_neighbors=3)
+                
+                # Train the classifier
+                knn.fit(X_train, y_train)
+                
+                # Make predictions
+                y_pred = knn.predict(X_test)
+                
+                # Calculate accuracy
+                accuracy = accuracy_score(y_test, y_pred)
+                print(f"Test Accuracy: {accuracy * 100}%")
+                
         
             </code></pre>
-            <p>Brief overview of the coding aspects of the project or links to code repositories...</p>
         </section>
     
         <section class="subsection" id="3.3 results">
