@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Research</title>
+    <title>Domain Generalization Research</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Research</h1>
-    <p>Details about projects...</p>
-    <!-- Add more content specific to Projects here -->
+    <header>
+        <h1>Domain Generalization Research</h1>
+    </header>
+
+    <div class="table-of-contents">
+        <h2>Table of Contents</h2>
+        <table>
+            <tr>
+                <td><a href="#1 Domain Generalization in Numerical Datasets">1. Domain Generalization in Numerical Datasets</a></td>
+            </tr>
+            <tr>
+                <td><a href="#1.1 abstract">1.1 Abstract</a></td>
+            </tr>
+            <tr>
+                <td><a href="#1.2 document">1.2 Document</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <section id="#1 Combining KNN and Sentence Transformers for Article Categorization">
+        <h2>1. Combining KNN and Sentence Transformers for Article Categorization</h2>
+
+        <section class="subsection" id="1.1 abstract">
+            <h3>1.1 Abstract</h3>
+            <p>This paper explores the challenges and advancements in the field of machine learning, particularly focusing on the domain generalization in numerical datasets. The study centers around the application of Adversarial Discriminative Domain Adaptation (ADDA) to bridge the gap between different domains of numerical data, such as MNIST and USPS datasets. Initially encountering issues with low classification accuracy, our team delved into the intricacies of the ADDA model, particularly examining the roles of encoders, classifiers, and the adversarial training process. By integrating techniques like Batch Normalization and Dropout, we aimed to enhance the generalization capabilities of the model, enabling it to abstract numerical representations more effectively. The research journey involved debugging and fine-tuning neural networks, with a specific focus on understanding and optimizing the LeNet architecture for our purpose. The paper discusses our iterative process of adapting the ADDA model, highlighting the importance of encoder generalization and the dynamic between the discriminator and the target encoder. Despite achieving significant improvements in model performance, our exploration also revealed limitations when applied to datasets with more distinct domain-specific features, such as SVHN. This study not only underscores the potential and challenges of applying domain adaptation techniques in machine learning but also opens new avenues for research into enhancing model adaptability across a broader spectrum of numerical data representations.</p>
+        </section>
+
+        <section class="subsection" id="1.2 document">
+            <h3>1.2 Document</h3>
+            <p>
+                <a href="Domain_Generalization_Project.pdf" target="_blank">Download PDF</a>
+            </p>
+        </section>
+
+    </section>
 </body>
 </html>
