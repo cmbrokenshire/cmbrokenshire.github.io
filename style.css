@@ -302,3 +302,112 @@ body {
       }
   }
   
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.button {
+    background-color: white; /* White background */
+    border: 2px solid #A9A9A9; /* Grey border */
+    color: black;
+    padding: 20px 40px; /* Reverted padding for original size */
+    text-align: left; /* Align text to the left */
+    text-decoration: none;
+    display: flex; /* Use flex to align text to the left */
+    align-items: center; /* Center the text vertically */
+    justify-content: space-between; /* Space between text and arrow */
+    font-size: 20px; /* Reverted font size */
+    margin: 10px 5px; /* Reverted margin */
+    cursor: pointer;
+    width: 48%; /* Reverted button width */
+    box-sizing: border-box;
+    border-radius: 4px; /* Less rounded corners */
+    position: relative; /* For absolute positioning of the arrow */
+    transition: color 0.3s, border 0.3s; /* Smooth transition for color and border */
+}
+
+/* Arrow inside the button, pointing east (right) */
+.button::after {
+    content: '→'; /* Arrow symbol */
+    font-size: 20px; /* Reverted font size to match the text */
+    color: black; /* Initial color of arrow */
+    position: absolute;
+    right: 20px; /* Position from the right */
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+.button:hover {
+    border-color: #089097; /* Darker aqua border on hover */
+    border-width: 4px; /* Thicker border on hover */
+    color: #089097; /* Text becomes the darker aqua color on hover */
+}
+
+.button:hover::after {
+    color: #089097; /* Arrow becomes the darker aqua color on hover */
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.button {
+  background-color: white; /* White background */
+  border: 2px solid #A9A9A9; /* Grey border */
+  color: black;
+  padding: 20px 40px; /* Reverted padding for original size */
+  text-align: left; /* Align text to the left */
+  text-decoration: none;
+  display: flex; /* Use flex to align text to the left */
+  align-items: center; /* Center the text vertically */
+  justify-content: space-between; /* Space between text and arrow */
+  font-size: 20px; /* Reverted font size */
+  margin: 10px 5px; /* Reverted margin */
+  cursor: pointer;
+  width: 48%; /* Reverted button width */
+  box-sizing: border-box;
+  border-radius: 4px; /* Less rounded corners */
+  position: relative; /* For absolute positioning of the arrow */
+  transition: color 0.3s, border 0.3s; /* Smooth transition for color and border */
+}
+
+/* Arrow inside the button, pointing east (right) */
+.button::after {
+  content: '→'; /* Arrow symbol */
+  font-size: 20px; /* Reverted font size to match the text */
+  color: black; /* Initial color of arrow */
+  position: absolute;
+  right: 20px; /* Position from the right */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.button:hover {
+  border-color: #089097; /* Darker aqua border on hover */
+  border-width: 4px; /* Thicker border on hover */
+  color: #089097; /* Text becomes the darker aqua color on hover */
+}
+
+.button:hover::after {
+  color: #089097; /* Arrow becomes the darker aqua color on hover */
+}
+
+/* Centering the last button */
+.button-container:after {
+  content: "";
+  flex: auto;
+}
+
+.button:nth-last-child(1) {
+  margin-left: 0.075in;
+}
+
+
+
+
